@@ -89,7 +89,7 @@ while true; do
         text_device_found="Device detected"
         text_device_missing="Device missing"
 
-        text_nodered="A file named nodered_vigipool.json has been created, you can import it into Node-Red and click deploy."
+        text_nodered="A file named nodered_vigipool.json has been created and moved to /root/homeassistant, you can import it into Node-Red"
         break
     elif [ "$menu_choice" != "${menu_choice#[2frFR9]}" ] ;then 
         echo "Vous avez sélectionné '2 - FR - Français'"
@@ -149,7 +149,7 @@ while true; do
         text_device_found="Périphérique détecté"
         text_device_missing="Périphérique absent"
 
-        text_nodered="Un fichier nommé nodered_vigipool.json a été créé, vous pouvez l'importer dans Node-Red et cliquez sur déployer."
+        text_nodered="Un fichier nommé nodered_vigipool.json a été créé et déplacer dans /root/homeassistant, vous pouvez l'importer dans Node-Red."
         break
     else
         echo The choice was not understood, please try again \/ Le choix n\'a pas été compris, veuillez réessayer
@@ -470,46 +470,9 @@ echo "";
 echo "--- $text_step_4 ---"
 echo "";
 
-# Managing vigipool.yaml file
-
-# echo "$text_creation"
-# mkdir -p vigipool_templates
-# cd vigipool_templates
-
-# echo "$text_cleaning"
-# clean_and_download_template() {
-
-#     # echo "$text_cleaning ($1)"
-
-#     if test -f "$1.yaml"; then
-#         rm $1.yaml
-#     fi
-#     wget -q $link_to_scripts/vigipool_templates/$1.yaml
-# }
-
-# clean_and_download_template "anteam" $anteam
-# clean_and_download_template "anteaox" $anteaox
-# clean_and_download_template "anteavs" $anteavs
-# clean_and_download_template "daisyox" $daisyox
-# clean_and_download_template "daisyph" $daisyph
-# clean_and_download_template "lynx" $lynx
-# clean_and_download_template "phileox" $phileox
-# clean_and_download_template "tild" $tild
-# clean_and_download_template "vigipool" $vigipool
-# clean_and_download_template "vigiwatt" $vigiwatt
-# clean_and_download_template "x312" $x312
-# clean_and_download_template "ziphox" $ziphox
-
 # Retrieving MQTT data
 echo "$text_retrieving"
 mosquitto_sub_raw=$(timeout 1 mosquitto_sub -h $ip_address --pretty --verbose --topic "#")
-# if [[ $debug == true ]]; then
-#     echo "";
-#     echo "";
-#     echo "mosquitto_sub_raw = $mosquitto_sub_raw"
-#     echo "";
-#     echo "";
-# fi
 
 # Retrieving device names
 echo "$text_mqtt"
@@ -599,70 +562,6 @@ replace_template_name "vigiwatt" $vigiwatt
 replace_template_name "x312" $x312
 replace_template_name "ziphox" $ziphox
 
-# found_and_integrate() {
-#     if [[ -z "$2" ]]; then
-#         echo "$text_device_missing : $1"
-#     elif [[ -n "$2" ]]; then
-#         if test -f "$1.yaml"; then
-#             echo "$text_device_found : $1"
-#             cat $1.yaml >> vigipool.yaml
-#         fi
-#     fi
-# }
-
-# echo "" > vigipool.yaml
-# echo cleaning vigipool.yaml
-
-# found_and_integrate "anteam" $anteam
-# found_and_integrate "anteaox" $anteaox
-# found_and_integrate "anteavs" $anteavs
-# found_and_integrate "daisyox" $daisyox
-# found_and_integrate "daisyph" $daisyph
-# found_and_integrate "lynx" $lynx
-# found_and_integrate "phileox" $phileox
-# found_and_integrate "tild" $tild
-# found_and_integrate "vigipool" $vigipool
-# found_and_integrate "vigiwatt" $vigiwatt
-# found_and_integrate "x312" $x312
-# found_and_integrate "ziphox" $ziphox
-
-
-# replace_name() {
-#     sed -i "s/name: $1/name: $2/" nodered_vigipool.json
-# }
-
-# if [[ $text_lang == "fr" ]]; then
-#     echo "-> fr"
-#     replace_name "Injecting Product" "Produit Injecté"
-#     replace_name "Total volume injected" "Volume total injecté"
-#     replace_name "Serial Number" "Numéro de série"
-#     replace_name "pH Setpoint" "Consigne pH"
-#     replace_name "Max volume injected in 24 hours" "Volume max injecté en 24 heures"
-#     replace_name "Container volume" "Volume du conteneur"
-#     replace_name "Firmware Version" "Version du firmware"
-#     replace_name "pH Value" "Valeur du pH"
-#     replace_name "Hardware Version" "Version du matériel"
-#     replace_name "Light" "Éclairage"
-#     replace_name "Filtration" "Filtration"
-#     replace_name "Auxiliary" "Auxiliary"
-#     replace_name "AnteaM" "AnteaM"
-#     replace_name "Light Mode" "Mode d'éclairage"
-#     replace_name "Filtration Mode" "Mode de filtration"
-#     replace_name "Auxiliary 1 Mode" "Mode de l'auxiliaire 1"
-#     replace_name "Auxiliary 2 Mode" "Mode de l'auxiliaire 2"
-#     replace_name "ORP Value" "Valeur de l'ORP"
-#     replace_name "ORP Setpoint" "Consigne ORP"
-#     replace_name "pH mode" "Mode du pH"
-#     replace_name "pH Setpoint" "Consigne pH"
-#     replace_name "pH Setpoint" "pH Setpoint"
-#     replace_name "Speed" "Vitesse"
-#     replace_name "Timer" "Minuterie"
-#     replace_name "Time Selecter" "Sélecteur de temps"
-#     replace_name "Time Remaining" "Temps restant"
-#     replace_name "pH Mode" "Mode du pH"
-#     replace_name "pH Value" "Valeur du pH"
-# fi
-
 replace_simple() {
     sed -i "s/$1/$2/" ./nodered_vigipool.json
 }
@@ -670,53 +569,11 @@ replace_simple() {
 replace_simple "192.168.41.999" "$ip_address"
 replace_simple "192.168.41.888" "$ip_address_broker"
 
-
 echo "";
 echo "";
 echo "--- $text_nodered ---"
 echo "";
 
-
-# echo "";
-# echo "";
-# echo "--- $text_step_5 ---"
-# echo "";
-
-# ha_core_check=$(ha core check)
-# ha_core_save=$ha_core_check
-# echo $ha_core_check | grep -Eo "Error" > temp.txt
-# ha_core_check=$(head -n 1 temp.txt)
-# echo $ha_core_check
-# if [[ -z "$ha_core_check" ]]; then
-#     echo "$text_modif"
-#     while true; do
-#         echo "$text_reboot"
-#         echo "1 - $text_reboot_now";
-#         echo "2 - $text_reboot_later";
-#         echo "$text_please : "
-#         read menu_choice
-#         if [ "$menu_choice" != "${menu_choice#[1aA]}" ] ;then 
-#             # 1 - Automatic
-#             echo "$text_you '$text_reboot_now'"
-#             ha core rebuild
-#             echo "$text_end"
-#             break
-#         elif [ "$menu_choice" != "${menu_choice#[2mM]}" ] ;then 
-#             # 2 - Manual
-#             echo "$text_you '$text_reboot_later'"
-#             break
-#         else
-#             echo The choice was not understood, please try again
-#         fi
-#     done
-# elif [[ -n "$ha_core_check" ]]; then
-#     echo "";
-#     echo "$text_prob_1 : "
-#     echo "";
-#     echo $ha_core_save 
-#     echo "";
-#     echo "$text_prob_2 : configuration_$timestamp.backup"
-#     echo "";
-# fi
+mv nodered_vigipool.json /root/homeassistant/nodered_vigipool.json
 
 rm temp.txt
