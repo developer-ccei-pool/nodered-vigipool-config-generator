@@ -451,13 +451,14 @@ while true; do
     if [ "$menu_choice" != "${menu_choice#[1aA]}" ] ;then 
         # 1 - Automatic
         echo "$text_you '$text_want_auto'"
-        wget https://raw.githubusercontent.com/developer-ccei-pool/nodered-vigipool-config-generator/main/nodered_templates/nodered_multi_flux.json
+        wget https://raw.githubusercontent.com/developer-ccei-pool/nodered-vigipool-config-generator/main/nodered_templates/nodered_one_flux.json
         mv nodered_one_flux.json nodered_vigipool.json
         break
     elif [ "$menu_choice" != "${menu_choice#[2mM]}" ] ;then 
         # 2 - Manual
         echo "$text_you '$text_want_manu'"
-        cp nodered_templates/nodered_multi_flux.json ./nodered_vigipool.json
+        wget https://raw.githubusercontent.com/developer-ccei-pool/nodered-vigipool-config-generator/main/nodered_templates/nodered_multi_flux.json
+        mv nodered_multi_flux.json nodered_vigipool.json
         break
     else
         echo The choice was not understood, please try again
