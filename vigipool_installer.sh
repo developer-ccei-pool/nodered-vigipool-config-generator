@@ -166,9 +166,9 @@ fi
 
 # Downloading and launching and removing the installer
 # wget -q https://raw.githubusercontent.com/developer-ccei-pool/nodered-vigipool-config-generator/main/vigipool_installer.sh && chmod +x vigipool_installer.sh && bash vigipool_installer.sh
-# if [[ $debug == false ]]; then
-    # rm vigipool_installer.sh
-# fi
+if [[ $debug == false ]]; then
+    rm vigipool_installer.sh
+fi
 
 # IP address management
 ## recovery of the machine's IP address and processing of information
