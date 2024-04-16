@@ -1,0 +1,1 @@
+# nodered-vigipool-config-generator
