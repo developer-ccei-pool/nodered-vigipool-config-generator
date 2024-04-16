@@ -46,7 +46,7 @@ List of Vigipool devices compatible with the installer:
 
 1. Copy the following line: 
 ######
-    wget -O - https://raw.githubusercontent.com/developer-ccei-pool/nodered-vigipool-config-generator/main/vigipool_installer.sh | bash -
+    wget -q https://raw.githubusercontent.com/developer-ccei-pool/nodered-vigipool-config-generator/main/vigipool_installer.sh && chmod +x vigipool_installer.sh && bash vigipool_installer.sh
 
 10. Paste the line into the terminal. To do this, you can use the following keyboard shortcut "Ctrl+shift+v" or this one "shift+ins"
 ![step 8](https://raw.githubusercontent.com/developer-ccei-pool/home-assistant-vigipool-installer/main/img/en/8.png)

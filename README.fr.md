@@ -47,7 +47,7 @@ Liste des équipements Vigipool compatibles avec l'installateur :
 
 1. Copier la ligne suivante : 
 ######
-    wget -O - https://raw.githubusercontent.com/developer-ccei-pool/nodered-vigipool-config-generator/main/vigipool_installer.sh | bash -
+    wget -q https://raw.githubusercontent.com/developer-ccei-pool/nodered-vigipool-config-generator/main/vigipool_installer.sh && chmod +x vigipool_installer.sh && bash vigipool_installer.sh
 
 10. Coller la ligne dans le terminal. Pour cela, vous pouvez utiliser le raccourci clavier suivant "Ctrl+shift+v" ou celui-ci "shift+ins"
 ![step 8](https://raw.githubusercontent.com/developer-ccei-pool/home-assistant-vigipool-installer/main/img/fr/8.png)
