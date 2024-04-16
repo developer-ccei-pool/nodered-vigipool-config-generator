@@ -718,3 +718,5 @@ echo "";
 #     echo "$text_prob_2 : configuration_$timestamp.backup"
 #     echo "";
 # fi
+
+rm temp.txt
