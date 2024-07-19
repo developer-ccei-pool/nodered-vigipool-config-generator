@@ -11,7 +11,7 @@ List of Vigipool devices compatible with the installer:
 - Tild
 - Phileo VP
 - Ofix
-- AnteaM
+- AnteaM + Meteor
 - Zelia
 - VigiBrio
 
