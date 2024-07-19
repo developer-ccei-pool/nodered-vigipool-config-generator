@@ -7,6 +7,10 @@ This script will allow you to quickly configure Node-Red to make your Vigipool p
 
 This will allow you to add other MQTT products to your Home Assistant setup
 
+Here is an example :
+
+![mqtt4_en](https://github.com/user-attachments/assets/a38c0af6-01f9-44dd-ad83-cd331e497326)
+
 List of Vigipool devices compatible with the installer:
 - Tild
 - Phileo VP
