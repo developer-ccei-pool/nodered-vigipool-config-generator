@@ -3,7 +3,7 @@
 [![en](https://img.shields.io/badge/lang-en-white.svg)](https://github.com/developer-ccei-pool/nodered-vigipool-config-generator/blob/master/README.md)
 [![fr](https://img.shields.io/badge/lang-fr-white.svg)](https://github.com/developer-ccei-pool/nodered-vigipool-config-generator/blob/master/README.fr.md)
 
-This script will allow you to quickly configure Node-Red to be able to make your Vigipool products accountable
+This script will allow you to quickly configure Node-Red to make your Vigipool products compatible.
 
 This will allow you to add other MQTT products to your Home Assistant setup
 
