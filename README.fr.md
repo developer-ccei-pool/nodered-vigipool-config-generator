@@ -5,7 +5,7 @@
 
 Ce script va vous permettre de rapidement configurer Node-Red pour pouvoir rendre vos produits Vigipool compatibles.
 
-Cela vous permettra d'ajouter d'autres produits MQTT à votre configuration Home Assistant en plus de ceux ceux de 
+Cela vous permettra d'ajouter d'autres produits MQTT à votre configuration Home Assistant
 
 Liste des équipements Vigipool compatibles avec l'installateur : 
 - Tild
