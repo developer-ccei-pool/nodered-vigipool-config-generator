@@ -9,7 +9,7 @@ Cela vous permettra d'ajouter d'autres produits MQTT à votre configuration Home
 
 Voici un exemple : 
 
-![mqtt4](https://github.com/user-attachments/assets/371d5057-b69a-4db9-9e83-a19a017087a6)
+![mqtt4_fr](https://github.com/user-attachments/assets/caea3474-f1b4-47a1-83f2-14322cc03dc8)
 
 Liste des équipements Vigipool compatibles avec l'installateur : 
 - Tild
